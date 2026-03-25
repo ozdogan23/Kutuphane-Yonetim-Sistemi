@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yönetici Girişi</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            
+            align-items: center;
+            justify-content: center;
+            height: 100px;
+            background-color: rgb(114, 82, 92);
+            margin: 0;
+        }
+        
+        .login-container {
+           position: absolute;
+           top:50%;
+           left:50%;
+           transform: translate(-50%,-50%);
+           background-color:wheat;
+           padding: 20px;
+           border-radius: 5px;
+           box-shadow: 0 0 10px rgb(0, 0,0,.1);
+           width: 300px;
+        }
+       
+         h2{
+            margin-top:10px;
+            padding: auto;
+         }
+         
+         .form-gruop{
+            margin-bottom: 5px;
+         }
+         label{
+            display: block;
+            margin-bottom: 5px;
+         }
+
+        input{
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button{
+            width: 100%;
+            padding: 10px;
+            background-color: gray;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+          button:hover{
+            background-color: green;
+          }
+        .message{
+            margin-top: 10px;
+            display: none;
+        }
+        .sucess{
+            color: green;
+        }
+        .error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+     <div id="login-container" class="login-container">
+         <center><h2>LOGİN</h2></center>
+         <form id="login-form">
+              <div class="form-gruop">
+                   <label for="username">KULLANICI ADI:</label>
+                    <input type="text" id="username" name="username" required >
+              </div>
+              <div class="form-gruop">
+                   <label for="password">ŞİFRE:</label>
+                   <input type="password" id="password" name="password" required>
+              </div>
+              <button type="submit">GİRİŞ YAP</button>
+              <p id="message" class="message"></p>
+         </form>
+     </div> 
+
+    <script>
+document.getElementById('login-container').style.display = 'block';
+ document.getElementById('login-form').addEventListener('submit',function(event){
+   event.preventDefault();
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    var message = document.getElementById('message');
+    
+   
+   if(username==='arem'&& password=='1234'){
+   message.textContent ='Giriş başarılı!';
+   message.className ='message sucess';
+   message.style.display ='block';
+
+   }
+   else{
+    message.textContent ='Yanlış kullanıcı adı veya şifre.Tekrar deneyiniz.';
+    message.className ='message error';
+    message.style.display ='block';
+
+   }
+
+ })
+ 
+    </script>
+</body>
+</html>

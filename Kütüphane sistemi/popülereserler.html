@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popüler Eserler</title>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100px;
+        margin: 0;
+        padding: 150px 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: url("img/kütüphanearkaplan.jpeg");
+    }
+    .container{
+        position: relative;
+        width: 80%;
+        max-width:1200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .row-container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 120px;
+    }
+    .image-container{
+        position: relative;
+        margin: 20px;
+        cursor: pointer;
+    }
+    .image{
+        transition: transform 0.5s ease;
+    }
+    .info{
+        position: absolute;
+        background-color: paleturquoise;
+        padding: 20px;
+        border: 1px solid black;
+        transition: opacity 0.5s ease,transform 0.5s ease;
+        opacity: 0;
+        width: 300px;
+    }
+    .info-left{
+        right:100%;
+        transform: translateX(150px);
+    }
+    .info-right{
+        left: 100%;
+        transform: translateX(-150px);
+    }
+    .image-container.left.active .image{
+        transform: translateX(150px);
+    }
+    .image-container.left.active .info-right{
+        transform: translateX(0);
+        opacity: 1;
+    }
+    .image-container.right.active .image{
+        transform: translateX(-150px);
+    }
+    .image-container.right.active .info-left{
+        transform: translateX(0);
+        opacity: 1;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row-container">
+            <div style="margin-bottom: 50px;" class="image-container left" id="top-left-container">
+                <img src="img/sokratesinsavunması.jpg" alt="sokratesinsavunması" width="200" height="300"  class=image id="top-left-image">
+                <div class="info info-right" id="top-left-info">
+                    <h2>Sokratesin Savunması</h2>
+                    <p>Kitap Adı:Sokrates'in Savunması<br>
+                    Yazar:Platon<br>
+                    Çevirmen:Arzu Akgün<br>
+                    Sayfa Sayısı:60<br>
+                    Orijinal Dili:Yunanca</p>
+                </div>
+            </div>
+            <div style="margin-bottom: 50px;" class="image-container right" id="top-right-container">
+                <img src="img/tutunamayanlar.jpeg" alt="oğuzatay_tutunamyanlar" width="200" height="300" class="image" id="top-right-image">
+                <div class="info info-left" id="top-right-info">
+                    <h2>Tutunamyanlar</h2>
+                    <p>Kitap Adı:Tutunamayanlar<br>
+                    Yazar:Oğuz Atay<br>
+                    Çevirmen:Yok<br>
+                    Sayfa Sayısı:724<br>
+                    Orijinal Dili:Türkçe</p>
+                </div>
+            </div>
+        </div>
+        <div class="row-container">
+            <div style="margin-bottom: 150px;" class="image-container left" id="bottom-left-container">
+                <img src="img/zamanınkısatarihi.jpg" alt="zamanınkısatarihi" width="200" height="300" class="image" id="bottom-left-image">
+                <div class="info info-right" id="bottom-left-info">
+                    <h2>Zamanın Kısa Tarihi</h2>
+                    <p>Kitap Adı:Zamanın Kısa Tarihi<br>
+                    Yazar:Stephen Hawking<br>
+                    Çevirmen:Mehmet Ali Aslan<br>
+                    Sayfa Sayısı:265<br>
+                    Orijinal Dili:İngilizce</p>
+                </div>
+            </div>
+            <div style="margin-bottom: 150px;" class="image-container right" id="bottom-right-container">
+                <img src="img/düşselmüze.jpg" alt="düşselmüze" width="200" height="300" class="image" id="bottom-right-image">
+                <div class="info info-left" id="bottom-right-info">
+                    <h2>Düşsel Müze</h2>
+                    <p>Kitap Adı:Düşsel Müze<br>
+                    Yazar:Andre Malraux<br>
+                    Çevirmen:Bahadır Gülmez<br>
+                    Sayfa Sayısı:228<br>
+                    Orijinal Dili:Türkçe</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('top-left-info').addEventListener('click',function(){
+        window.location.href = 'felsefe&psikoloji.html';
+        });    
+        document.getElementById('top-right-info').addEventListener('click',function(){
+        window.location.href = 'edebiyat.html';
+        });
+        document.getElementById('bottom-left-info').addEventListener('click',function(){
+        window.location.href = 'bilim.html';
+        });
+        document.getElementById('bottom-right-info').addEventListener('click',function(){
+        window.location.href = 'sanat.html'
+        });
+        document.getElementById('top-left-image').addEventListener('click',function(){
+        document.getElementById('top-left-container').classList.toggle('active');
+        })
+        document.getElementById('top-right-image').addEventListener('click',function(){
+        document.getElementById('top-right-container').classList.toggle('active');
+        })
+        document.getElementById('bottom-left-image').addEventListener('click',function(){
+        document.getElementById('bottom-left-container').classList.toggle('active');
+        })
+        document.getElementById('bottom-right-image').addEventListener('click',function(){
+        document.getElementById('bottom-right-container').classList.toggle('active');
+        })
+    </script>
+</body>
+</html>

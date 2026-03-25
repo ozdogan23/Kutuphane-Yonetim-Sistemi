@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edebiyat</title>
+    <style>
+        body{
+            background-color: #f8fae5;
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            min-height: 900px;
+        }
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url("img/kütüphanearkaplan1.jpeg");
+            border-radius: 100px;
+            padding: 0;
+            margin-top: 10px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-left: 60px;
+            margin-top: 5px;
+        }
+        .logo img {
+            height: 100px;
+            width: auto;
+            border-radius: 50%;
+        }
+        .search {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        .btn {
+            background-color: #fff;
+            border: none;
+            cursor: pointer;
+            padding-left: 200px;
+            padding-right: 200px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 7px;
+            margin-left: 10px;
+            margin-top: -30px;
+            list-style-type: none;
+            font-size: medium;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: -40px;
+            margin-bottom: 5px;
+        }
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .navbar ul li {
+            margin-right: 20px;
+            position: relative;
+        }
+        .navbar ul li a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            display: block;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: large;
+        }
+        .navbar ul li ul {
+            display: none;
+            position: absolute;
+            background-color: #153448;
+            border-radius: 0 0 5px 5px;
+            padding: 0;
+            margin-top: 5px;
+            width: max-content;
+            z-index: 1;
+        }
+        .navbar ul li:hover ul {
+            display: block;
+        }
+        .navbar ul li ul li {
+            margin-right: 0;
+        }
+        .navbar ul li ul li a {
+            padding: 10px;
+            border-radius: 0;
+            display: block;
+        }
+        .navbar ul li a:hover,
+        .navbar ul li ul li a:hover {
+            background-color: #f39c12;
+        }
+        .button-container{
+            background:white;
+            padding: 5px 50px ;
+            text-decoration: none;
+            border:2px ;
+            font-weight:none;
+            margin-top: 40px;
+            margin-bottom:60px;
+            margin-left: 60px;
+            margin-right: 60px;
+            border-radius: 10px;
+            transition: .2s;
+        }
+        blue-button:hover{
+            background:white;
+        }
+        .blue-button{
+            background: white;
+            border:3px solid white ;
+            cursor: pointer;
+            color:black;
+            font-size: 12px;
+        }
+        footer{
+            margin:0;
+            padding:0;
+            font-size:16px;
+            color:white;
+            font-family: Arial, Helvetica, sans-serif;
+            position: absolute;
+            bottom: 0;
+        }
+        .footer{
+            background: black;
+            padding-top:40px;
+            position: relative;
+            bottom: 0;
+        }
+        .container{  
+            width: 1140px;
+            margin:auto;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            padding:10px;
+        }
+        h5{
+            font-size:16px;
+            color:white;
+            margin-bottom:0;
+            text-align:center;
+            margin-right:100px;
+        }
+        .footer-cotent  ul li{
+            width: 250px;
+            margin:auto;
+            padding:0;
+            margin-right:100px;
+            list-style: none;
+        }   
+        .list  li {
+            width: auto;
+            list-style-type: none;
+            padding:15px;
+            position: relative;
+                
+            }
+        .list li::before{
+            content:"";
+            position: absolute;
+            transform: translate(-50%,-50%);
+            left: 50%;
+            top:100%;
+            width: 0;
+            height: 0;
+            background-color: blue;
+            transition-duration: .5s;
+        }
+        .list li:hover::before{
+            width: 70px;
+        }
+        .social-icons li{
+            display: inline-block;
+            text-align: center;
+            padding: 5px;
+        }
+        .social-icons i{
+            color: brown;
+            list-style-type: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        a:hover{
+            color: brown;
+        }
+        .social-icons i:hover{
+            color: brown;
+            list-style-type: none;
+        }
+        .bottom-bar{
+            background: gray;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 50px;
+        }
+        .bottom-bar{
+            color: black;
+            margin: 0;
+            font-size: 16px;
+            padding: 1px;
+        }
+        .class{
+            float:left;
+        }
+        h1{
+            text-align: center;
+            color: #f8fae5;
+            background-color: #605353;
+            padding: 10px;
+            margin-left: 200px;
+            margin-right: 200px;
+            border-radius: 20px;
+        }
+        h2{
+            text-align: center;
+            color: #452620;
+        }
+        .books{
+            font-size: large;
+            display: flex;
+            justify-content: center;
+            margin-left: 70px;
+            margin-right: 70px;
+        }
+        .table{
+            margin-left: 50px;
+            background-color: #574545;
+            border-radius: 10px;
+            color: #f8fae5;
+        }
+        .images{
+            background-color: #699189;
+            width: 100%;
+            margin: 20px;
+            padding: 10px;
+            color: white;
+        }
+        li{
+            list-style-type: none;
+        }
+        .icon2{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="top-bar">
+            <div class="logo">
+                <a href="anasayfa.html"><img src="img/AREM Kütüphane.png" alt="Logo"></a>
+            </div>
+            <div class="search">
+                <button class="btn"><li><a href="kütüphanekullanımı.html">Kütüphane Kullanımı</a></li></button>
+            </div>
+            <div class="giris">
+                <div class="button-container">
+                    <a href="yöneticigirişi.html" target="_blank">
+                    <button class=" blue-button">YÖNETİCİ GİRİŞİ</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li><a href="#">Kategoriler</a>
+                        <ul>
+                            <li><a href="felsefe&psikoloji.html">Felsefe & Psikoloji</a></li>
+                            <li><a href="bilim.html">Bilim</a></li>
+                            <li><a href="sanat.html">Sanat</a></li>
+                            <li><a href="edebiyat.html">Edebiyat</a></li>
+                            <li><a href="tarihvecoğrafya.html">Tarih ve Coğrafya</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="yenigelenler.html">Yeni Gelenler</a></li>
+                    <li><a href="hakkımızda.html">Hakkımızda</a></li>
+                    <li><a href="iletişim.html">İletişim</a>
+                    </li> 
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <h1>Edebiyat</h1>
+    <hr>
+    <h2>Kütüphanemizde Bulunan Eserler</h2>
+    <div class="books">
+        <a href="#yaban"><li class="images"><img src="img/yaban.jpg" alt="Yaban" width="100px" height="130px"></li></a>
+        <a href="#kürkmantolumadonna"><li class="images"><img src="img/kürkmantolumadonna.jpg" alt="Kürk Mantolu Madonna" width="100px" height="130px"></li></a>
+        <a href="#dokuzuncuhariciyekoğuşu"><li class="images"><img src="img/dokuzuncuhariciyekoğuşu.jpg" alt="Dokuzuncu Hariciye Koğuşu" width="100px" height="130px"></li></a>
+        <a href="#cevdetbeyveoğulları"><li class="images"><img src="img/cevdetbeyveoğulları.jpg" alt="Cevdet Bey ve Oğulları" width="100px" height="130px"></li></a>
+        <a href="#gurbetkuşları"><li class="images"><img src="img/gurbetkuşları.jpg" alt="Gurbet Kuşları" width="100px" height="130px"></li></a>
+        <a href="#yaşamakgüzelşeybekardeşim"><li class="images"><img src="img/yaşamakgüzelşeybekardeşim.jpg" alt="Yaşamak Güzek Şey Be Kardeşim" width="100px" height="130px"></li></a>
+        <a href="#tutunamayanlar"><li class="images"><img src="img/tutunamayanlar.jpeg" alt="Tutunamayanlar" width="100px" height="130px"></li></a>
+    </div>
+    <hr>
+    <table width="90%" id="yaban" class="table">
+        <thead>
+            <tr>
+                <th>Yakup Kadri Karaosmanoğlu - Yaban</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="5"><img src="img/yaban.jpg" alt="Yaban" width="200px"></td>
+                <td>Kitap Adı:</td>
+                <td>Yaban</td>
+            </tr>
+            <tr>
+                <td>Yazar:</td>
+                <td>Yakup Kadri Karaosmanoğlu</td>
+            </tr>
+            <tr>
+                <td>Sayfa Sayısı:</td>
+                <td>214</td>
+            </tr>
+            <tr>
+                <td>Dil:</td>
+                <td>Türkçe</td>
+            </tr>
+            <tr>
+                <td>Kitap Açıklaması:</td>
+                <td>
+                    Kendi dönemi içindeki gerçekçilik anlayışına uygun olarak yazılmış olan Yaban'da Yakup Kadri, I. Dünya Savaşı'nın bitimiyle birlikte Sakarya Savaşı'nın sonuna kadar olan sürede bir Anadolu köyünde, köylüleri, köyün durumunu, Milli Mücadeleye ilişkin tavırlarını bir aydının gözüyle verir. Yaban için "bu eser benliğimin çok derinliklerinden adeta kendi kendine sökülüp, koparak gelmiş bir şeydir" diyen yazar, bu romanda ortaya koyduğu birçok soruna daha sonra yazacağı Ankara'da cevap bulmaya çalışacaktır.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <table width="90%" id="kürkmantolumadonna" class="table">
+        <thead>
+            <tr>
+                <th>Sabahattin Ali - Kürk Mantolu Madonna</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="5"><img src="img/kürkmantolumadonna.jpg" alt="Kürk Mantolu Madonna" width="200px"></td>
+                <td>Kitap Adı:</td>
+                <td>Kürk Mantolu Madonna</td>
+            </tr>
+            <tr>
+                <td>Yazar:</td>
+                <td>Sabahattin Ali</td>
+            </tr>
+            <tr>
+                <td>Sayfa Sayısı:</td>
+                <td>160</td>
+            </tr>
+            <tr>
+                <td>Dil:</td>
+                <td>Türkçe</td>
+            </tr>
+            <tr>
+                <td>Kitap Açıklaması:</td>
+                <td>
+                    İlk baskısı 1943 yılında yapılan Kürk Mantolu Madonna, günümüzde halen en çok ilgi gören ve satılan kitaplar arasında bulunuyor. Basıldığı günden bu yana 1 milyondan fazla satan kitap üzerine, birçok araştırma ve inceleme yapılmış, hakkında tezler yazılmış, fakat bu başarısının sırrı tam olarak çözülememiştir. Onu bu kadar özel kılan ve hala konuşuluyor olmasındaki en büyük pay, tabii ki Sabahattin Ali’nin usta kalemi ve başarılı ruh tahlilleridir.
+                    Konusu ile adından sıkça söz ettiren eser, Türk edebiyatının da en önemli romanları arasında gösteriliyor. Psikolojik bir anlatı olarak da ifade edebileceğimiz roman aslında üç ana tema etrafında şekilleniyor: Aşk, yalnızlık ve yabancılaşma. Kürk Mantolu Madonna, daha çok bir aşk hikayesi olarak görünse de romanda aslında bir insanın yalnızlaşma sürecine ve giderek topluma yabancılaşmasına şahit oluyoruz. Psikolojik tahliller çerçevesinde bu yabancılaşma ve yalnızlık duygusunu Sabahattin Ali o kadar iyi anlatıyor ki, okurken bize bu hisleri adeta yaşıyormuşçasına hissettiriyor.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <table width="90%" id="dokuzuncuhariciyekoğuşu" class="table">
+        <thead>
+            <tr>
+                <th>Peyami Safa - Dokuzuncu Hariciye Koğuşu</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="5"><img src="img/dokuzuncuhariciyekoğuşu.jpg" alt="Dokuzuncu Hariciye Koğuşu" width="200px"></td>
+                <td>Kitap Adı:</td>
+                <td>Dokuzuncu Hariciye Koğuşu</td>
+            </tr>
+            <tr>
+                <td>Yazar:</td>
+                <td>Peyami Safa</td>
+            </tr>
+            <tr>
+                <td>Sayfa Sayısı:</td>
+                <td>112</td>
+            </tr>
+            <tr>
+                <td>Dil:</td>
+                <td>Türkçe</td>
+            </tr>
+            <tr>
+                <td>Kitap Açıklaması:</td>
+                <td>
+                    Peyami Safa'nın şaheserlerinden Dokuzuncu Hariciye Koğuşu, Türk edebiyatında “insan ruhunun derinliklerinde ve labi­rentlerinde dolaşan ilk roman” olması ve hasta bir insanı ve onun psikolojisini ele alması bakımından önemli bir yere sahiptir. Birçok araştırmacı ve yazar tarafından Türk edebiyatında bir ilk kabul edilen Dokuzuncu Hariciye Koğuşu, Tanpınar dediği gibi, “acının ve ıstırabın yegâne kitabı” olarak hem kemiyet hem de keyfiyet bakımından başka hiçbir eser olmasa da Türk romanının var olduğuna delil gösterilebilecek kudrette bir eserdir. Romanın genç kahramanı, ayağındaki rahatsızlıktan kurtulabilmek için sayısız doktora görünür ve en nihayetinde havadar bir ortamda, stresten uzak bir istirahat dönemi geçirmesi gerektiğine ikna edilir. Ancak, gerek akrabaları olan bir Paşa'nın Erenköyü'ndeki köşkünde misafir kaldığı dönemde, gerekse kendi evi ve hastaneye gidiş gelişlerinde şuurunu adeta bir facia atmosferinde yoğurur. Peyami Safa'nın çocukluk ve gençlik dönemlerinden fazlasıyla izler taşıyan roman, hem umudu ve umutsuzluğu, hem de sevinci ve felaketi aynı sayfalara sığdırabilmiş olması bakımından insanın eşsiz bir tarifini sunuyor.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <table width="90%" id="cevdetbeyveoğulları" class="table">
+        <thead>
+            <tr>
+                <th>Orhan Pamuk - Cevdet Bey ve Oğulları</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="5"><img src="img/cevdetbeyveoğulları.jpg" alt="Cevdet Bey ve Oğulları" width="200px"></td>
+                <td>Kitap Adı:</td>
+                <td>Cevder Bey ve Oğulları</td>
+            </tr>
+            <tr>
+                <td>Yazar:</td>
+                <td>Orhan Pamuk</td>
+            </tr>
+            <tr>
+                <td>Sayfa Sayısı:</td>
+                <td>644</td>
+            </tr>
+            <tr>
+                <td>Dil:</td>
+                <td>Türkçe</td>
+            </tr>
+            <tr>
+                <td>Kitap Açıklaması:</td>
+                <td>
+                    Orhan Pamuk'a ilk ününü getiren bu büyük roman İstanbullu bir ailenin yetmiş yıllık serüvenini hikâye ediyor. Yazarın "Ülke, Aile, Roman" üzerine sonsözüyle...
+                    Nişantaşlı bir ailenin 20. yüzyılın başından itibaren üç kuşak boyunca serüvenlerini anlatan bu kitap ev içlerinin renklerini, zamanın akışını, günlük sıradan konuşmaları akılda yer eden kahramanlar aracılığıyla saptarken, okura geleneksel romandan alınacak hazları bütünüyle veriyor. Abdülhamit döneminin son yıllarında, İstanbul'un ilk Müslüman tüccarlarından küçük dükkân sahibi Cevdet Bey'in tutkusu, hem işlerini büyütmek, zenginleştirmektir hem de "Batılı anlamda" çağdaş, modern bir aile kurmak. Kökü taşraya uzanan geleneksel ailesini bir yana bırakarak bu isteklerini gerçekleştirmeye girişen Cevdet Bey'in ve oğullarının hikâyesi, bir anlamda modernleşme uğraşı içindeki Türkiye Cumhuriyeti'nin özel hayatının da hikâyesidir. Ev içlerinin, yeni apartman hayatının, Batılılaşan büyük ailelerin, Beyoğlu'na çıkıp alışveriş etmelerin, radyo dinlenen pazar öğleden sonralarının dikkat ve sevgiyle anlatıldığı bu panoramik roman, Orhan Pamuk'a hak ettiği ünü getiren olgun bir ilk kitaptır.
+                    "Pamuk adeta okurun elinden tutup onu kendi dünyasında dolaştırıyor, birbirinin içine geçen sahnelerle, karşılaşmalarla ve konuşmalarla her şeyi en ince ayrıntısına kadar çözümlüyor."
+                    -Frankfurter Allgemeine-
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <table width="90%" id="gurbetkuşları" class="table">
+        <thead>
+            <tr>
+                <th>Orhan Kemal - Gurbet Kuşları</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="5"><img src="img/gurbetkuşları.jpg" alt="Gurbet Kuşları" width="200px"></td>
+                <td>Kitap Adı:</td>
+                <td>Gurbet Kuşları</td>
+            </tr>
+            <tr>
+                <td>Yazar:</td>
+                <td>Orhan Kemal</td>
+            </tr>
+            <tr>
+                <td>Sayfa Sayısı:</td>
+                <td>384</td>
+            </tr>
+            <tr>
+                <td>Dil:</td>
+                <td>Türkçe</td>
+            </tr>
+            <tr>
+                <td>Kitap Açıklaması:</td>
+                <td>
+                    1950'li ve 6O'lı yıllarda göçler ve inşaatlarla çehresi hızla değişmekte olan İstanbul Gurbet Kuşları'nın acımasız toprağıdır. Ekmek kavgası uğruna İstanbul'a göçmüş Anadolulular, bu değişimin rüzgârından nasiplenmeye çalışan açıkgözler ve kendini bu insanların sırtına basarak dönüştüren sistem, İstanbul kadar yaşamın da rengini değiştirmektedir. Tam bu değişimin ortasındaki insanlar Orhan Kemal'in usta kalemi ve her zaman insana sevgi dolu olan duruşuyla sunuluyor okurlara. Türkiye'nin yakın geçmişine ve onu takip eden şimdisine gerçekçi bir gözle bakabilmek için Gurbet Kuşları mutlaka okunması gereken bir kitap.
+                    Orhan Kemal'in kitapta lir okurun hayatta rastlayabileceği o çok nadir hazineler arasında yer alır. Çok az yazar okurunun dünyasında onun kadar iz bırakır, okurunu onun kadar biçimlendirir. Orhan Kemal umudu ve iyimserliği yemden kazanmamız için yol gösterir bize. Edebiyatımızın en değerli ustalarından biri olan Orhan Kemal'in kitaplarını yayımlamaktan
+                    onur duyuyoruz.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <table width="90%" id="yaşamakgüzelşeybekardeşim" class="table">
+        <thead>
+            <tr>
+                <th>Nazım Hikmet - Yaşamak Güzel Şey Be Kardeşim</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="5"><img src="img/yaşamakgüzelşeybekardeşim.jpg" alt="Yaşamak Güzel Şey Be Kardeşim" width="200px"></td>
+                <td>Kitap Adı:</td>
+                <td>Yaşamak Güzel Şey Be Kardeşim</td>
+            </tr>
+            <tr>
+                <td>Yazar:</td>
+                <td>Nazım Hikmet</td>
+            </tr>
+            <tr>
+                <td>Sayfa Sayısı:</td>
+                <td>178</td>
+            </tr>
+            <tr>
+                <td>Dil:</td>
+                <td>Türkçe</td>
+            </tr>
+            <tr>
+                <td>Kitap Açıklaması:</td>
+                <td>
+                    Nâzım Hikmet'in sayısı sadece dört olan romanları yaratıcı çalışmaları içinde daha sınırlı sayıda olsa da, yazarı bütüncül olarak tanımak için vazgeçilmez bir okuma oluşturuyor. Genelde Nâzım Hikmet'in bireye, topluma, olaylara ve olgulara "tarihsel diyalektik" açıdan bakışını veren bu romanlar, aynı zamanda, özellikle Yaşamak Güzel Şey Be Kardeşim'de gizli bir otobiyografi niteliği de taşıyor. "Nâzım Hikmet Külliyatı" bu romanlarsız düşünülemez...
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <table width="90%" id="tutunamayanlar" class="table">
+        <thead>
+            <tr>
+                <th>Oğuz Atay - Tutunamayanlar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="5"><img src="img/tutunamayanlar.jpeg" alt="Tutunamayanlar" width="200px"></td>
+                <td>Kitap Adı:</td>
+                <td>Tutunamayanlar</td>
+            </tr>
+            <tr>
+                <td>Yazar:</td>
+                <td>Oğux Atay</td>
+            </tr>
+            <tr>
+                <td>Sayfa Sayısı:</td>
+                <td>724</td>
+            </tr>
+            <tr>
+                <td>Dil:</td>
+                <td>Türkçe</td>
+            </tr>
+            <tr>
+                <td>Kitap Açıklaması:</td>
+                <td>
+                    Türk edebiyatının en önemli eserlerinden biri olan Tutunamayanlar`ı Berna Moran, "hem söyledikleri hem de söyleyiş biçimiyle bir başkaldırı" olarak niteler. Moran`a göre "Oğuz Atay`ın mizah gücü, duyarlılığı ve kullandığı teknik incelikler, Tutunamayanlar`ı büyük bir yeteneğin ürünü yapmış, yapıttaki bu yetkinlik Türk romanını çağdaş roman anlayışıyla aymı hizaya getirmiş ve ona çok şey kazandırmıştır." Küçük burjuva dünyasını zekice alaya alan Atay "saldırısını, tutunanların anlamayacağı, red edeceği türden bir romanla yapar."
+                    Oğuz Atay, 1934`te İnebolu`da doğdu. Ankara Maarif Koleji`ni, İTÜ İnşaat Fakültesi`ni bitirdi. 1960`ta İDMMA İnşaat Bölümü`nde öğretim üyesi olarak çalışmaya başladı. Tutunamayanlar`ın yayımlanmasının (1971-1972) ardından, önemli bir tartışmanın odağında yeraldı. TRT 1970 Roman Ödülü`nü kazanan Tutunamayanlar`ı kısa bir süre sonra, 1973 yılında Tehlikeli Oyunlar adlı ikinci romanı izledi. Hikayelerini Korkuyu Beklerken başlığı altında topladı. 1911- 1967 arasında yaşamış hocası Prof. Mustafa İnan`ın hayatını romanlaştırarak Bir Bilim Adamının Romanı: Mustafa İnan`ı yazdı. Oyunlarla Yaşayanlar adlı tiyatro eseri Devlet Tiyatroları`nda sahnelendi. Atay 13 Aralık 1977`de, büyük projesi "Türkiye`nin Ruhu"nu yazamadan hayata gözlerini yumdu.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-cotent"></div>
+                <div class="footer-cotent">
+                    <h5>İletişim</h5>
+                     <ul class="social-icon">
+                     <li>Mail:aremkutuphane@gmail.com</li><br>
+                     <li>Telefon:05308605689</li>
+                     </ul>
+                    </div>
+                <div class="footer-cotent0">
+                    <h5>Takip Et</h5>
+                        <table class="social-icon">
+                            <tr>
+                                <td class="icon2">
+                                    <li><a href="https://www.whatsapp.com/" target="_blank"><img src="img/whatsappikonu.png" alt="WhatsApp" height="50px"></a></li>
+                                </td>
+                                <td>
+                                    <li><a href="https://www.instagram.com/" target="_blank"><img src="img/instagramikonu.png" alt="Instagram" height="50px"><a></li>
+                                </td>
+                                <td>
+                                    <li><a href="https://x.com/" target="_blank"><img src="img/twitterikonu.png" alt="Twitter" height="50px"></a></li>
+                                </td>
+                                <td>
+                                    <li><a href="https://www.linkedin.com/" target="_blank"><img src="img/linkedinikonu.png" alt="Linkedin" height="40px"></a></li>
+                                </td>
+                            </tr> 
+                        </table>
+                    </div>
+                </div>
+            <div class="bottom-bar">
+                <p>&copy;Tüm Haklar Saklıdır.</p>
+            </div>
+        </div>
+    </footer>    
+</body>
+</html>

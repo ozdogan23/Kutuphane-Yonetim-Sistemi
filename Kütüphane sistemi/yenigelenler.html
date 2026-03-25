@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeni Gelenler</title>
+    <style>
+        body{
+            background: #131313;
+            color: #525252;
+            font-family: verdana,Arial,Helvetica,sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: 12px;
+        }
+        .page{
+            width: 960px;
+            margin: auto;
+        }
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url("img/kütüphanearkaplan1.jpeg");
+            border-radius: 100px;
+            padding: 0;
+            margin-top: 10px;
+            margin-left: -260px;
+            margin-right: -260px;
+        }
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-left: 60px;
+            margin-top: 5px;
+        }
+        .logo img {
+            height: 100px;
+            width: auto;
+            border-radius: 50%;
+        }
+        .search {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        .btn {
+            background-color: #fff;
+            border: none;
+            cursor: pointer;
+            padding-left: 200px;
+            padding-right: 200px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 7px;
+            margin-left: 10px;
+            margin-top: -30px;
+            list-style-type: none;
+            font-size: medium;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: -40px;
+            margin-bottom: 5px;
+        }
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .navbar ul li {
+            margin-right: 20px;
+            position: relative;
+        }
+        .navbar ul li a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            display: block;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: large;
+        }
+        .navbar ul li ul {
+            display: none;
+            position: absolute;
+            background-color: #153448;
+            border-radius: 0 0 5px 5px;
+            padding: 0;
+            margin-top: 5px;
+            width: max-content;
+            z-index: 1;
+        }
+        .navbar ul li:hover ul {
+            display: block;
+        }
+        .navbar ul li ul li {
+            margin-right: 0;
+        }
+        .navbar ul li ul li a {
+            padding: 10px;
+            border-radius: 0;
+            display: block;
+        }
+        .navbar ul li a:hover,
+        .navbar ul li ul li a:hover {
+            background-color: #f39c12;
+        }
+        .button-container{
+            background:white;
+            padding: 5px 50px ;
+            text-decoration: none;
+            border:2px ;
+            font-weight:none;
+            margin-top: 40px;
+            margin-bottom:60px;
+            margin-left: 60px;
+            margin-right: 60px;
+            border-radius: 10px;
+            transition: .2s;
+        }
+        blue-button:hover{
+            background:white;
+        }
+        .blue-button{
+            background: white;
+            border:3px solid white ;
+            cursor: pointer;
+            color:black;
+            font-size: 12px;
+        } 
+        footer{
+            margin:0;
+            padding:0;
+            font-size:16px;
+            color:white;
+            font-family: Arial, Helvetica, sans-serif;
+            position: absolute;
+            bottom: 0;
+        }
+        .footer{
+            background: black;
+            padding-top:40px;
+            position: relative;
+            bottom: 0;
+            margin-top: 1200px;
+        }
+        .container{  
+            width: 1140px;
+            margin:auto;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            padding:10px;
+        }
+        h5{
+            font-size:16px;
+            color:white;
+            margin-bottom:0;
+            text-align:center;
+            margin-right:100px;
+        }
+        .footer-cotent  ul li{
+            width: 250px;
+            margin:auto;
+            padding:0;
+            margin-right:100px;
+            list-style: none;
+        }   
+        .list  li {
+            width: auto;
+            list-style-type: none;
+            padding:15px;
+            position: relative;
+                
+            }
+        .list li::before{
+            content:"";
+            position: absolute;
+            transform: translate(-50%,-50%);
+            left: 50%;
+            top:100%;
+            width: 0;
+            height: 0;
+            background-color: blue;
+            transition-duration: .5s;
+        }
+        .list li:hover::before{
+            width: 70px;
+        }
+        .social-icons2 li{
+            display: inline-block;
+            text-align: center;
+            padding: 5px;
+        }
+        .social-icons2 i{
+            color: brown;
+            list-style-type: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        a:hover{
+            color: brown;
+        }
+        .social-icons2 i:hover{
+            color: brown;
+            list-style-type: none;
+        }
+        .bottom-bar{
+            background: gray;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 50px;
+        }
+        .bottom-bar{
+            color: black;
+            margin: 0;
+            font-size: 16px;
+            padding: 1px;
+        }
+        .class{
+            float:left;
+        }
+        li{
+            list-style-type: none;
+        }
+        .icon2{
+            padding: 10px;
+        }
+        .middle{ 
+            margin-top: 20px;
+        }
+        .middle-left{
+            width: 575px;
+            float: left;
+        }
+        .middle-right{
+            width: 360px;
+            float: right;
+            height: 180px;
+            background: #FDC609;
+            padding: 10px;
+            text-align: center;
+        }
+        .middle-right img{
+            box-shadow: 10px 10px 10px gray;
+        }
+        .middle-picture{
+            margin: 0 25px; 
+        }
+        .part
+        {
+            width: 300px;
+            float: left;
+        }
+        .part{
+            margin-right: 30px;
+        }
+        .part:nth-child(3){
+            margin:0px;
+        }
+        .part h1{
+            border-bottom: 1px dotted white;
+            padding-bottom: 15px;  
+        }
+        .button a{
+            display: inline-block;
+            padding: 10px 15px;
+            color: #fdc609;
+            background-color: #232323;
+            text-decoration: none;
+        }
+        .clear{
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header class="header">
+            <div class="top-bar">
+                <div class="logo">
+                    <a href="anasayfa.html"><img src="img/AREM Kütüphane.png" alt="Logo"></a>
+                </div>
+                <div class="search">
+                    <button class="btn"><li><a href="kütüphanekullanımı.html">Kütüphane Kullanımı</a></li></button>
+                </div>
+                <div class="giris">
+                    <div class="button-container">
+                        <a href="yöneticigirişi.html" target="_blank">
+                        <button class=" blue-button">YÖNETİCİ GİRİŞİ</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar">
+                <nav>
+                    <ul>
+                        <li><a href="#">Kategoriler</a>
+                            <ul>
+                                <li><a href="felsefe&psikoloji.html">Felsefe & Psikoloji</a></li>
+                                <li><a href="bilim.html">Bilim</a></li>
+                                <li><a href="sanat.html">Sanat</a></li>
+                                <li><a href="edebiyat.html">Edebiyat</a></li>
+                                <li><a href="tarihvecoğrafya.html">Tarih ve Coğrafya</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="yenigelenler.html">Yeni Gelenler</a></li>
+                        <li><a href="hakkımızda.html">Hakkımızda</a></li>
+                        <li><a href="iletişim.html">İletişim</a>
+                        </li> 
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="middle">
+            <div class="middle-left">
+                <img src="img/AREM Kütüphane.png" alt="Arem Kütüphane" height="400px">
+            </div>
+            <div class="middle-right">
+                <h1>Yeni Gelenler</h1>
+                <img src="img/şekerportakalı.jpg" alt="Şeker Portakalı" height="110px">
+                <img class="middle-picture" src="img/hayvançiftliği.jpg" alt="Hayvan Çiftliği" height="110px">
+                <img src="img/1984.jpg" alt="1984" height="110px">
+                
+            </div>
+            <div class="middle-right">
+                <img src="img/simyacı.jpg" alt="Simyacı" height="110px">
+                <img class="middle-picture" src="img/gulyabani.webp" alt="Gulyabani" height="110px">
+                <img src="img/sefiller.avif" alt="Sefiller" height="110px">
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="content">
+            <div class="part">
+                <h1>Şeker Portakalı</h1>
+                <img src="img/şekerportakalı.jpg" alt="Şeker Portakalı" height="350px" width="250px">
+                <p>Kitap Adı: Şeker Portakalı</p>
+                <p>Yazar: Jose Mauro De Vasconcelos</p>
+                <p>Çevirmen: Emrah İmre</p>
+                <div class="button">
+                    <a href="dahafazlabilgi1.html">Daha Fazla Bilgi</a>
+                </div>
+            </div>
+            <div class="part middle-part">
+                <h1>Hayvan Çiftliği</h1>
+                <img src="img/hayvançiftliği.jpg" alt="Hayvan Çiftliği" height="350px" width="250px">
+                <p>Kitap Adı: Hayvan Çiftliği</p>
+                <p>Yazar: George Orwell</p>
+                <p>Çevirmen: Celal Üster</p>
+                <div class="button">
+                    <a href="dahafazlabilgi2.html">Daha Fazla Bilgi</a>
+                </div>
+            </div>
+            <div class="part">
+                <h1>1984</h1>
+                <img src="img/1984.jpg" alt="1984" height="350px" width="250px">
+                <p>Kitap Adı: 1984</p>
+                <p>Yazar: George Orwell</p>
+                <p>Çevirmen: Celal Üster</p>
+                <div class="button">
+                    <a href="dahafazlabilgi3.html">Daha Fazla Bilgi</a>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="part">
+                <h1>Simyacı</h1>
+                <img src="img/simyacı.jpg" alt="Simyacı" height="350px" width="250px">
+                <p>Kitap Adı: Simyacı</p>
+                <p>Yazar: Paulo Coelho</p>
+                <p>Çevirmen: Özdemir İnce</p>
+                <div class="button">
+                    <a href="dahafazlabilgi4.html">Daha Fazla Bilgi</a>
+                </div>
+            </div>
+            <div class="part middle-part">
+                <h1>Gulyabani</h1>
+                <img src="img/gulyabani.webp" alt="Gulyabani" height="350px" width="250px">
+                <p>Kitap Adı: Gulyabani</p>
+                <p>Yazar: Hüseyin Rahmi Gürpınar</p>
+                <p>Dil: Türkçe</p>
+                <div class="button">
+                    <a href="dahafazlabilgi5.html">Daha Fazla Bilgi</a>
+                </div>
+            </div>
+            <div class="part">
+                <h1>Sefiller</h1>
+                <img src="img/sefiller.avif" alt="Sefiller" height="350px" width="250px">
+                <p>Kitap Adı: Sefiller</p>
+                <p>Yazar: Victor Hugo</p>
+                <p>Çevirmen: Volkan Yalçıntoklu</p>
+                <div class="button">
+                    <a href="dahafazlabilgi6.html">Daha Fazla Bilgi</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-cotent"></div>
+                <div class="footer-cotent">
+                    <h5>İletişim</h5>
+                    <ul class="social-icon">
+                    <li>Mail:aremkutuphane@gmail.com</li><br>
+                    <li>Telefon:05308605689</li>
+                    </ul>
+                    </div>
+                <div class="footer-cotent0">
+                    <h5>Takip Et</h5>
+                        <table class="social-icon">
+                            <tr>
+                                <td class="icon2">
+                                    <li><a href="https://www.whatsapp.com/" target="_blank"><img src="img/whatsappikonu.png" alt="WhatsApp" height="50px"></a></li>
+                                </td>
+                                <td>
+                                    <li><a href="https://www.instagram.com/" target="_blank"><img src="img/instagramikonu.png" alt="Instagram" height="50px"><a></li>
+                                </td>
+                                <td>
+                                    <li><a href="https://x.com/" target="_blank"><img src="img/twitterikonu.png" alt="Twitter" height="50px"></a></li>
+                                </td>
+                                <td>
+                                    <li><a href="https://www.linkedin.com/" target="_blank"><img src="img/linkedinikonu.png" alt="Linkedin" height="40px"></a></li>
+                                </td>
+                            </tr> 
+                        </table>
+                    </div>
+                </div>
+            <div class="bottom-bar">
+                <p>&copy;Tüm Haklar Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

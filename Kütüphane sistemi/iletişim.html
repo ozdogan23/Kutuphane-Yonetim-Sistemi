@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <style>
+        body {
+            background-image: linear-gradient(90deg, #DFD0B8, #3C5B6F);
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            min-height: 900px;
+        }
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #153448;
+            border-radius: 100px;
+            padding: 0;
+            margin-top: 10px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-left: 60px;
+            margin-top: 5px;
+        }
+        .logo img {
+            height: 100px;
+            width: auto;
+            border-radius: 50%;
+        }
+        .search {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        .btn {
+            background-color: #fff;
+            border: none;
+            cursor: pointer;
+            padding-left: 200px;
+            padding-right: 200px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 7px;
+            margin-left: 10px;
+            margin-top: -30px;
+            list-style-type: none;
+            font-size: medium;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: -40px;
+            margin-bottom: 5px;
+        }
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .navbar ul li {
+            margin-right: 20px;
+            position: relative;
+        }
+        .navbar ul li a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            display: block;
+        }
+        .navbar ul li ul {
+            display: none;
+            position: absolute;
+            background-color: #153448;
+            border-radius: 0 0 5px 5px;
+            padding: 0;
+            margin-top: 5px;
+            width: max-content;
+            z-index: 1;
+        }
+        .navbar ul li:hover ul {
+            display: block;
+        }
+        .navbar ul li ul li {
+            margin-right: 0;
+        }
+        .navbar ul li ul li a {
+            padding: 10px;
+            border-radius: 0;
+            display: block;
+        }
+        .navbar ul li a:hover,
+        .navbar ul li ul li a:hover {
+            background-color: #f39c12;
+        }
+        .button-container{
+            background:white;
+            padding: 5px 50px ;
+            text-decoration: none;
+            border:2px ;
+            font-weight:none;
+            margin-top: 40px;
+            margin-bottom:60px;
+            margin-left: 60px;
+            margin-right: 60px;
+            border-radius: 10px;
+            transition: .2s;
+        }
+        blue-button:hover{
+            background:white;
+        }
+        .blue-button{
+            background: white;
+            border:3px solid white ;
+            cursor: pointer;
+            color:black;
+            font-size: 12px;
+        }
+        .table{
+            background-color: white;
+            text-align: center;
+            margin-top: 30px;
+            margin-left: 300px;
+            border-radius: 50px;
+            padding-bottom: 30px;
+            padding-top: 20px;
+        }
+        .social{
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        h1{
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        .title{
+            padding: 10px 20px 10px 20px;
+        }
+        .telefon{
+            padding: 20px;
+        }
+        .eposta{
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="top-bar">
+            <div class="logo">
+                <a href="anasayfa.html"><img src="img/AREM Kütüphane.png" alt="Logo"></a>
+            </div>
+            <div class="search">
+                <button class="btn"><li><a href="kütüphanekullanımı.html">Kütüphane Kullanımı</a></li></button>
+            </div>
+            <div class="giris">
+                <div class="button-container">
+                    <a href="" target="_blank">
+                    <button class=" blue-button">YÖNETİCİ GİRİŞİ</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li><a href="#">Kategoriler</a>
+                        <ul>
+                            <li><a href="felsefe&psikoloji.html">Felsefe & Psikoloji</a></li>
+                            <li><a href="bilim.html">Bilim</a></li>
+                            <li><a href="sanat.html">Sanat</a></li>
+                            <li><a href="edebiyat.html">Edebiyat</a></li>
+                            <li><a href="tarihvecoğrafya.html">Tarih ve Coğrafya</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="yenigelenler.html">Yeni Gelenler</a></li>
+                    <li><a href="hakkımızda.html">Hakkımızda</a></li>
+                    <li><a href="iletişim.html">İletişim</a>
+                    </li> 
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <h1>İletişim Bilgileri</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="title">Telefon</th>
+                <th class="title">E-Posta</th>
+                <th class="title">Sosyal Medya</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="img/telefonikonu.jpeg" alt="Telefon" height="70px"></td>
+                <td><a href="mailto:aremkutuphanesi@gmail.com "><img src="img/epostaikonu.png" alt="E-Posta" height="70px"></a></td>
+                <td class="social">
+                    <a href="https://www.whatsapp.com/" target="_blank"><img src="img/whatsappikonu.png" alt="WhatsApp" height="50px"></a>
+                    <a href="https://www.instagram.com/" target="_blank"><img src="img/instagramikonu.png" alt="Instagram" height="50px"><a>
+                    <a href="https://x.com/" target="_blank"><img src="img/twitterikonu.png" alt="Twitter" height="50px"></a>
+                    <a href="https://www.linkedin.com/" target="_blank"><img src="img/linkedinikonu.png" alt="Linkedin" height="40px"></a>
+                </td>
+            </tr>
+            <tr>
+                <td class="telefon">Telefon: +90 (530) 860 56 89</td>
+                <td class="eposta">E-Posta: aremkutuphanesi@gmail.com</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

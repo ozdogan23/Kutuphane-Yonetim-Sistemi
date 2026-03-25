@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanat</title>
+    <style>
+        body{
+            background-color: #f8fae5;
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            min-height: 900px;
+        }
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url("img/kütüphanearkaplan1.jpeg");
+            border-radius: 100px;
+            padding: 0;
+            margin-top: 10px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-left: 60px;
+            margin-top: 5px;
+        }
+        .logo img {
+            height: 100px;
+            width: auto;
+            border-radius: 50%;
+        }
+        .search {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        .btn {
+            background-color: #fff;
+            border: none;
+            cursor: pointer;
+            padding-left: 200px;
+            padding-right: 200px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 7px;
+            margin-left: 10px;
+            margin-top: -30px;
+            list-style-type: none;
+            font-size: medium;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: -40px;
+            margin-bottom: 5px;
+        }
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .navbar ul li {
+            margin-right: 20px;
+            position: relative;
+        }
+        .navbar ul li a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            display: block;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: large;
+        }
+        .navbar ul li ul {
+            display: none;
+            position: absolute;
+            background-color: #153448;
+            border-radius: 0 0 5px 5px;
+            padding: 0;
+            margin-top: 5px;
+            width: max-content;
+            z-index: 1;
+        }
+        .navbar ul li:hover ul {
+            display: block;
+        }
+        .navbar ul li ul li {
+            margin-right: 0;
+        }
+        .navbar ul li ul li a {
+            padding: 10px;
+            border-radius: 0;
+            display: block;
+        }
+        .navbar ul li a:hover,
+        .navbar ul li ul li a:hover {
+            background-color: #f39c12;
+        }
+        .button-container{
+            background:white;
+            padding: 5px 50px ;
+            text-decoration: none;
+            border:2px ;
+            font-weight:none;
+            margin-top: 40px;
+            margin-bottom:60px;
+            margin-left: 60px;
+            margin-right: 60px;
+            border-radius: 10px;
+            transition: .2s;
+        }
+        blue-button:hover{
+            background:white;
+        }
+        .blue-button{
+            background: white;
+            border:3px solid white ;
+            cursor: pointer;
+            color:black;
+            font-size: 12px;
+        }
+        footer{
+            margin:0;
+            padding:0;
+            font-size:16px;
+            color:white;
+            font-family: Arial, Helvetica, sans-serif;
+            position: absolute;
+            bottom: 0;
+        }
+        .footer{
+            background: black;
+            padding-top:40px;
+            position: relative;
+            bottom: 0;
+        }
+        .container{  
+            width: 1140px;
+            margin:auto;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            padding:10px;
+        }
+        h5{
+            font-size:16px;
+            color:white;
+            margin-bottom:0;
+            text-align:center;
+            margin-right:100px;
+        }
+        .footer-cotent  ul li{
+            width: 250px;
+            margin:auto;
+            padding:0;
+            margin-right:100px;
+            list-style: none;
+        }   
+        .list  li {
+            width: auto;
+            list-style-type: none;
+            padding:15px;
+            position: relative;
+                
+            }
+        .list li::before{
+            content:"";
+            position: absolute;
+            transform: translate(-50%,-50%);
+            left: 50%;
+            top:100%;
+            width: 0;
+            height: 0;
+            background-color: blue;
+            transition-duration: .5s;
+        }
+        .list li:hover::before{
+            width: 70px;
+        }
+        .social-icons li{
+            display: inline-block;
+            text-align: center;
+            padding: 5px;
+        }
+        .social-icons i{
+            color: brown;
+            list-style-type: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        a:hover{
+            color: brown;
+        }
+        .social-icons i:hover{
+            color: brown;
+            list-style-type: none;
+        }
+        .bottom-bar{
+            background: gray;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 50px;
+        }
+        .bottom-bar{
+            color: black;
+            margin: 0;
+            font-size: 16px;
+            padding: 1px;
+        }
+        .class{
+            float:left;
+        }
+        h1{
+            text-align: center;
+            color: #f8fae5;
+            background-color: #605353;
+            padding: 10px;
+            margin-left: 200px;
+            margin-right: 200px;
+            border-radius: 20px;
+        }
+        h2{
+            text-align: center;
+            color: #452620;
+        }
+        .books{
+            font-size: large;
+            display: flex;
+            justify-content: center;
+            margin-left: 70px;
+            margin-right: 70px;
+        }
+        .table{
+            margin-left: 50px;
+            background-color: #574545;
+            border-radius: 10px;
+            color: #f8fae5;
+        }
+        .images{
+            background-color: #699189;
+            width: 100%;
+            margin: 20px;
+            padding: 10px;
+            color: white;
+        }
+        li{
+            list-style-type: none;
+        }
+        .icon2{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="top-bar">
+            <div class="logo">
+                <a href="anasayfa.html"><img src="img/AREM Kütüphane.png" alt="Logo"></a>
+            </div>
+            <div class="search">
+                <button class="btn"><li><a href="kütüphanekullanımı.html">Kütüphane Kullanımı</a></li></button>
+            </div>
+            <div class="giris">
+                <div class="button-container">
+                    <a href="yöneticigirişi.html" target="_blank">
+                    <button class=" blue-button">YÖNETİCİ GİRİŞİ</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li><a href="#">Kategoriler</a>
+                        <ul>
+                            <li><a href="felsefe&psikoloji.html">Felsefe & Psikoloji</a></li>
+                            <li><a href="bilim.html">Bilim</a></li>
+                            <li><a href="sanat.html">Sanat</a></li>
+                            <li><a href="edebiyat.html">Edebiyat</a></li>
+                            <li><a href="tarihvecoğrafya.html">Tarih ve Coğrafya</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="yenigelenler.html">Yeni Gelenler</a></li>
+                    <li><a href="hakkımızda.html">Hakkımızda</a></li>
+                    <li><a href="iletişim.html">İletişim</a>
+                    </li> 
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <h1>Sanat</h1>
+    <hr>
+    <h2>Kütüphanemizde Bulunan Eserler</h2>
+    <div class="books">
+        <a href="#görmebiçimleri"><li class="images"><img src="img/görmebiçimleri.jpg" alt="Görme Biçimleri" width="100px" height="130px"></li></a>
+        <a href="#düşselmüze"><li class="images"><img src="img/düşselmüze.jpg" alt="Düşsel Müze" width="100px" height="130px"></li></a>
+        <a href="#türkiyedeçağdaşsanatkoleksiyonculuğu"><li class="images"><img src="img/türkideyeçağdaşsanatkoleksiyonculuğu.jpg" alt="Türkiye'de Çağdaş Sanat Koleksiyonculuğu" width="100px" height="130px"></li></a>
+        <a href="#fotoğrafladiyalog"><li class="images"><img src="img/fotoğrafladiyalog.jpg" alt="Fotoğrafla Diyalog" width="100px" height="130px"></li></a>
+        <a href="#çağdaşsanatmüzeleri"><li class="images"><img src="img/çağdaşsanatmüzeleri.jpg" alt="Çağdaş Sanat Müzeleri" width="100px" height="130px"></li></a>
+    </div>
+    <hr>
+    <table width="90%" id="görmebiçimleri" class="table">
+        <thead>
+            <tr>
+                <th>John Berger - Görme Biçimleri</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="7"><img src="img/görmebiçimleri.jpg" alt="Görme Biçimleri" width="200px"></td>
+                <td>Kitap Adı:</td>
+                <td>Görme Biçimleri</td>
+            </tr>
+            <tr>
+                <td>Yazar:</td>
+                <td>John Berger</td>
+            </tr>
+            <tr>
+                <td>Çevirmen:</td>
+                <td>Yurdanur Salman</td>
+            </tr>
+            <tr>
+                <td>Sayfa Sayısı:</td>
+                <td>166</td>
+            </tr>
+            <tr>
+                <td>Orijinal Dili:</td>
+                <td>İngilizce</td>
+            </tr>
+            <tr>
+                <td>Orijinal Adı:</td>
+                <td>An Analysis of John Berger's The Ways of Seeing</td>
+            </tr>
+            <tr>
+                <td>Kitap Açıklaması:</td>
+                <td>
+                    Görme konuşmadan önce gelmiştir. Çocuk konuşmaya başlamadan önce bakıp tanımayı öğrenir.
+                    Ne var ki başka bir anlamda da görme sözcüklerden önce gelmiştir. Bizi çevreleyen dünyada kendi yerimizi görerek bulunuruz. Bu dünyayı sözcüklerle anlatırız ama sözcükler dünyayla çevrelenmiş olmamızı hiçbir zaman değiştiremez. Her akşam güneşin batışını görürüz.
+                    Dünyanın güneşe arkasını dönmekte olduğunu biliriz. Ne var ki bu bilgi, bu açıklama gördüklerimize uymaz hiçbir zaman. Gerçeküstücü ressam Magritte "Düşlerin Anahtarı" adlı resminde sözcüklerle nesneler arasında her zaman var olan bu uçurumu yorumlamıştır.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <table width="90%" id="düşselmüze" class="table">
+        <thead>
+            <tr>
+                <th>Andre Malraux - Düşsel Müze</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="5"><img src="img/düşselmüze.jpg" alt="Düşsel Müze" width="200px"></td>
+                <td>Kitap Adı:</td>
+                <td>Düşsel Müze</td>
+            </tr>
+            <tr>
+                <td>Yazar:</td>
+                <td>Andre Malraux</td>
+            </tr>
+            <tr>
+                <td>Çevirmen:</td>
+                <td>Bahadır Gülmez</td>
+            </tr>
+            <tr>
+                <td>Sayfa Sayısı:</td>
+                <td>228</td>
+            </tr>
+            <tr>
+                <td>Kitap Açıklaması:</td>
+                <td>
+                    Goncourt ödüllü romancı, de Gaulle döneminin kültür bakanı, sanat tarihçisi André Malraux'nun, Paris'in Alman işgalinden kurtulması ve 2. Dünya Savaşı'nın sonlanmasıyla 1947'de yazmaya başlayıp 1963'te tamamladığı Düşsel Müze, hiç şüphesiz sanat tarihinin en tartışmalı kitaplarından biri.
+                    Malraux'nun, izleyicilerin sanat eserleriyle kurduğu ilişkiyi merkeze alarak Yapıt, Biriciklik, Müze, Röprodüksiyon, Sanat Tarihi gibi kavramları tartıştığı Düşsel Müze, Walter Benjamin'in "Tekniğin Olanaklarıyla Yeniden Üretilebildiği Çağda Sanat Yapıtı" adlı klasik metniyle birlikte 20. yüzyıl sanat tartışmalarının merkezinde yer almayı sürdürüyor.
+                    Düşsel Müze, eserler arasındaki diyaloğun öneminin altını çizerken, sanat tarihinin ideal diyaloğunun, imgelemimizdeki düşsel müzede ve ancak eserlerin karşılaştırılmasıyla gerçekleşebileceğini vurguluyor. Malraux, fotoğraf ve çoğaltma tekniklerinin gelişmesiyle, yalnızca Batı sanatının değil, farklı kıtaları kapsayan bütünlüklü dünya sanatının eşsiz örneklerinin bir araya gelebildiği, birbirleriyle konuşabildiği bir çağdaki başkalaşımın, algı değişiminin alışageldiğimiz sanat tarihi okumalarını nasıl değiştirdiğini, yeni ilişkilendirme olanakları sunduğunu, Müze'nin duvarlarını yok ettiğini anlatıyor.
+                    Malraux sanat tarihini önce parçalara ayırıyor daha sonra yeni bir bakış açısıyla tekrar bir araya getiriyor. Malraux'nun soruları bugün de geçerliklerini sürdürüyor, dijital çağın yeni olanakları karşısında sanat yapıtının tekilliğini korurken aynı anda ağın dört bir yanında varoluşunu sürdürmesi arasında yaşanan gerilimin ve buradan doğan yeni teorilerin tarihsel arka planını sunuyor.
+                    Malraux'nun ele aldığı eserlerin renkli röprodüksiyonlarının eşlik ettiği bu özel baskı, tüm sanatseverler için vazgeçilmez bir kaynak.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <table width="90%" id="türkideyeçağdaşsanatkoleksiyonculuğu" class="table">
+        <thead>
+            <tr>
+                <th>Ebru Nalan Sülün - Türkiye'de Çağdaş Sanat Koleksiyonculuğu</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="5"><img src="img/türkideyeçağdaşsanatkoleksiyonculuğu.jpg" alt="Türkiye'de Çağdaş Sanat Koleksiyonculuğu" width="200px"></td>
+                <td>Kitap Adı:</td>
+                <td>Türkiye'de Çağdaş Sanat Koleksiyonculuğu</td>
+            </tr>
+            <tr>
+                <td>Yazar:</td>
+                <td>Ebru Nalan Sülün</td>
+            </tr>
+            <tr>
+                <td>Sayfa Sayısı:</td>
+                <td>387</td>
+            </tr>
+            <tr>
+                <td>Dil:</td>
+                <td>Türkçe</td>
+            </tr>
+            <tr>
+                <td>Kitap Açıklaması:</td>
+                <td>
+                    Türkiye’de özellikle 1980’li yıllardan sonra liberal ekonomiye paralel bir gelişim gösteren koleksiyonculuk 1990’lı yıllarda yayınlar, sergiler yoluyla görünür olmaya başlıyor. Modern ve çağdaş sanata odaklanan koleksiyonlardan bazıları 2000’li yıllarda özel müzeye dönüşerek toplumun kültürel gelişimine katkı sağlarken zenginleşmeye de devam ediyor.
+                    Türkiye’de Çağdaş Sanat Koleksiyonculuğu, konuyu Osmanlı İmparatorluğu’ndan günümüze kadar tarihsel ve ekonomik arka planıyla anlatıyor. Sanat piyasasının gelişiminde önemli bir yeri olan fuarların, sergilerin, yarışmaların, müzayedelerin koleksiyonculuk üzerindeki etkilerini ele alan kitap, uzun zaman gündem olan müzecilik ve özel müzecilik tartışmalarına da yer veriyor. 1990’lı yıllarda yaşanan ekonomik kriz yüzünden müzayedelerde satılarak dağılmak zorunda kalan özel koleksiyonlar a da değinilen kitapta, bu koleksiyonların toplu satışının koleksiyonculuğun gelişimindeki yeri açıklanıyor.
+                    Elgiz, Sabancı, Eczacıbaşı, ve Kıraç koleksiyonlarının başlangıç, gelişme ve müzeleşme sürecinin Türkiye sanat piyasasına etkilerinin konu edildiği kitap, türünün ilk örneği olarak Türkiye’de sanat koleksiyonculuğunun gelişimine, özel müzelerin kurulmasına dair kaynak arayanlar için tatmin edici bir içerik sunuyor.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <table width="90%" id="fotoğrafladiyalog" class="table">
+        <thead>
+            <tr>
+                <th>Ed. Thomas Cooper ve Paul Hill - Fotoğrafla Diyalog</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="5"><img src="img/fotoğrafladiyalog.jpg" alt="Fotoğrafla Diyalog" width="200px"></td>
+                <td>Kitap Adı:</td>
+                <td>Fotoğrafla Diyalog</td>
+            </tr>
+            <tr>
+                <td>Yazarlar:</td>
+                <td>Ed. Thomas Cooper ve Paul Hill</td>
+            </tr>
+            <tr>
+                <td>Çevirmen:</td>
+                <td>Yurdanur Salman</td>
+            </tr>
+            <tr>
+                <td>Sayfa Sayısı:</td>
+                <td>448</td>
+            </tr>
+            <tr>
+                <td>Kitap Açıklaması:</td>
+                <td>
+                    Yirminci yüzyılda fotoğraf alanına yön verenlerle yapılan bu söyleşiler birer klasik haline gelmiştir. Aralarında Ansel Adams, Henri Cartier-Bresson, Robert Capa, Imogen Cunningham, Man Ray, Cecil Beaton, Laura Gilpin ve Robert Doisneau gibi isimlerin de bulunduğu yirmiden fazla fotoğrafçı karşılaştıkları güçlükleri ve başarılarını anlatıyor, dünyada olup bitenlerin çalışmalarına etkilerinden söz ediyor ve gelecek nesil fotoğrafçılara önerilerde bulunuyor.
+                    Fotoğrafın tarihini yazan ve bu tarihe tanıklık edenlerden eşine az rastlanır, çift yönlü bir çalışma: hem kapsamlı bir kaynak hem de bu tarihi figürlerin tecrübelerini ilk ağızdan aktaran kişisel bir anlatı. Fotoğrafın izini sürmek için Fotoğrafla Diyalog bir başucu kitabı işlevi görüyor.
+                    "Bence biz tamamen ışığa bağımlıyız ama bunu pek bilmiyoruz – tıpkı havaya da bağımlı olduğumuz gibi.
+                    Bir balığın suya bağımlı oluşu gibi tıpkı. Eğer ışıktan uzaklaşırsan, ciddi bir kişilik bozukluğunun oluşabildiğine dair kanıtlar var. Biz, saçma bir şekilde, ışık varlıklarıyız. Işıkla besleniyoruz, bu inanılmaz bir kaynak. Işığa müdahale ettiğimizde ne yaptığımızın pek de bilincinde değiliz ve tabii ki çok fazlası da çok azı gibi zararlı. Bitkiler hayvanları besliyor ve bitkiler ve hayvanlar da bizi. Bitkinin ışık kaynağından ürettiği besin olmasa ne insan ne de hayvan var olabilir. Biz ışıkla doluyuz."
+                    Henry Holmes Smith
+                    ''Herkesin bir fotoğraf makinesi olabilir, herkes fotoğraf çekebilir. İnsanlara fotoğrafın çok basit olduğu söyleniyor fakat gerçek şu ki tam da bu nedenden ötürü fotoğraf çok zor ve tam da bu noktada mücadele etmeliyiz. Gazetecilerin işlerini edebiyat olarak kabul edemeyiz, Cartier-Bresson ve Eugene Smith gibi istisnalar hariç.
+                    Fakat insanlar, fotoğrafın insanlarla ilgili olmasının onu sanat yaptığını zannediyor. Bu hiç de doğru değil. Bunun bir yeri var, Ernest Hemingway’in Avrupa’dan Toronto Daily Star için gönderdiği köşe yazılarının bir yeri olduğu gibi. Bu edebiyatın bir parçası. Belki artık fotoğrafın “edebiyatını” fark edeceğimiz noktaya doğru gidiyoruzdur.''
+                    Beaumont Newhall
+                    “The Country Doctor”a bakarak, foto muhabirliğe damga vurduğun söylenebilir, daha önce kimsenin izleme cesaretine sahip olmadığı bir bakıştı bu. Bilinçli bir girişim miydi?
+                    Bunların hepsini Beethoven’dan öğrendim.
+                    Hangi Beethoven parçası?
+                    Pek çoğu, fakat eğer o ıssız adaya bir müzikle gideceksem bu muhtemelen Yaylı Çalgılar Dörtlüsü No. 14 (Opus 131) olurdu.'’
+                    W.Eugene Smith
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <table width="90%" id="çağdaşsanatmüzeleri" class="table">
+        <thead>
+            <tr>
+                <th>J. Pedro Lorente - Çağdaş Sanat Müzeleri</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="5"><img src="img/çağdaşsanatmüzeleri.jpg" alt="Çağdaş Sanat Müzeleri" width="200px"></td>
+                <td>Kitap Adı:</td>
+                <td>Çağdaş Sanat Müzeleri</td>
+            </tr>
+            <tr>
+                <td>Yazarlar:</td>
+                <td>J. Pedro Lorente</td>
+            </tr>
+            <tr>
+                <td>Çevirmen:</td>
+                <td>Şeyda Öztürk</td>
+            </tr>
+            <tr>
+                <td>Sayfa Sayısı:</td>
+                <td>346</td>
+            </tr>
+            <tr>
+                <td>Kitap Açıklaması:</td>
+                <td>
+                    Yirminci yüzyılda fotoğraf alanına yön verenlerle yapılan bu söyleşiler birer klasik haline gelmiştir. Aralarında Ansel Adams, Henri Cartier-Bresson, Turizmi canlandırma, hizmet sektörünü hareketlendirme, kentlerin kenar mahallelerini ıslah etme ve düşüşe geçmiş kentleri ayağa kaldırma gibi etkileri olan çağdaş sanat müzeleri pek çok ülkede desteklenen kurumlar.
+                    J. Pedro Lorente'nin çağdaş sanat müzesi modelleri olarak nitelediği Paris'teki Musee des Artistes Vivant ve New York'taki Museum of Modern Art, 19. ve 20. yüzyıllarda sanatsal paradigmaları belirleyen kurumlar. Buralarda şekillenen sanatsal beğeni eğilimleri bazı ülkelerde taklit edilip bazılarında bütünüyle reddedilse de, müzecilik kriterlerine dönüştükleri kesin. Çağdaş Sanat Müzeleri kitabında bu kurumların tarihini iki dönem olarak ele alan J. Pedro Lorente, çeşitli yaklaşımları sunup terminoloji konusundaki soruları cevaplayarak, çağdaş sanat müzesi kavramının zaman içinde geçirdiği değişimi tarihsel-coğrafi bir perspektife yerleştiriyor ve günümüzde kültür politikalarının nasıl belirlendiğini ortaya koyuyor.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-cotent"></div>
+                <div class="footer-cotent">
+                    <h5>İletişim</h5>
+                     <ul class="social-icon">
+                     <li>Mail:aremkutuphane@gmail.com</li><br>
+                     <li>Telefon:05308605689</li>
+                     </ul>
+                    </div>
+                <div class="footer-cotent0">
+                    <h5>Takip Et</h5>
+                        <table class="social-icon">
+                            <tr>
+                                <td class="icon2">
+                                    <li><a href="https://www.whatsapp.com/" target="_blank"><img src="img/whatsappikonu.png" alt="WhatsApp" height="50px"></a></li>
+                                </td>
+                                <td>
+                                    <li><a href="https://www.instagram.com/" target="_blank"><img src="img/instagramikonu.png" alt="Instagram" height="50px"><a></li>
+                                </td>
+                                <td>
+                                    <li><a href="https://x.com/" target="_blank"><img src="img/twitterikonu.png" alt="Twitter" height="50px"></a></li>
+                                </td>
+                                <td>
+                                    <li><a href="https://www.linkedin.com/" target="_blank"><img src="img/linkedinikonu.png" alt="Linkedin" height="40px"></a></li>
+                                </td>
+                            </tr> 
+                        </table>
+                    </div>
+                </div>
+            <div class="bottom-bar">
+                <p>&copy;Tüm Haklar Saklıdır.</p>
+            </div>
+        </div>
+    </footer>    
+</body>
+</html>

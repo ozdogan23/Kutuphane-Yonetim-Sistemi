@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kütüphane Kullanımı</title>
+    <style>
+    body{
+        font-family:Arial, Helvetica, sans-serif ;
+        margin:20px;
+        background-color: #c7b9a8;
+        padding: 0;
+        overflow-x: hidden;
+        min-height: 900px;
+    } 
+    .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url("img/kütüphanearkaplan1.jpeg");
+        border-radius: 100px;
+        padding: 0;
+        margin-top: 10px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .top-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    .logo {
+        display: flex;
+        align-items: center;
+        margin-left: 60px;
+        margin-top: 5px;
+    }
+    .logo img {
+        height: 100px;
+        width: auto;
+        border-radius: 50%;
+    }
+    .search {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .btn {
+        background-color: #fff;
+        border: none;
+        cursor: pointer;
+        padding-left: 200px;
+        padding-right: 200px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 7px;
+        margin-left: 10px;
+        margin-top: -30px;
+        list-style-type: none;
+        font-size: medium;
+    }
+    .navbar {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: -40px;
+        margin-bottom: 5px;
+    }
+    .navbar ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+    .navbar ul li {
+        margin-right: 20px;
+        position: relative;
+    }
+    .navbar ul li a {
+        text-decoration: none;
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        display: block;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: large;
+    }
+    .navbar ul li ul {
+        display: none;
+        position: absolute;
+        background-color: #153448;
+        border-radius: 0 0 5px 5px;
+        padding: 0;
+        margin-top: 5px;
+        width: max-content;
+        z-index: 1;
+    }
+    .navbar ul li:hover ul {
+        display: block;
+    }
+    .navbar ul li ul li {
+        margin-right: 0;
+    }
+    .navbar ul li ul li a {
+        padding: 10px;
+        border-radius: 0;
+        display: block;
+    }
+    .navbar ul li a:hover,
+    .navbar ul li ul li a:hover {
+        background-color: #f39c12;
+    }
+    .button-container{
+        background:white;
+        padding: 5px 50px ;
+        text-decoration: none;
+        border:2px ;
+        font-weight:none;
+        margin-top: 40px;
+        margin-bottom:60px;
+        margin-left: 60px;
+        margin-right: 60px;
+        border-radius: 10px;
+        transition: .2s;
+    }
+    blue-button:hover{
+        background:white;
+    }
+    .blue-button{
+        background: white;
+        border:3px solid white ;
+        cursor: pointer;
+        color:black;
+        font-size: 12px;
+    }
+    footer{
+        margin:0;
+        padding:0;
+        font-size:16px;
+        color:white;
+        font-family: Arial, Helvetica, sans-serif;
+        position: absolute;
+        bottom: 0;
+    }
+    .footer{
+        background: black;
+        padding-top:40px;
+        position: relative;
+        bottom: 0;
+    }
+    .container{  
+        width: 1140px;
+        margin:auto;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding:10px;
+    }
+    h5{
+        font-size:16px;
+        color:white;
+        margin-bottom:0;
+        text-align:center;
+        margin-right:100px;
+    }
+    .footer-cotent  ul li{
+        width: 250px;
+        margin:auto;
+        padding:0;
+        margin-right:100px;
+        list-style: none;
+    }   
+    .list  li {
+        width: auto;
+        list-style-type: none;
+        padding:15px;
+        position: relative;
+            
+        }
+    .list li::before{
+        content:"";
+        position: absolute;
+        transform: translate(-50%,-50%);
+        left: 50%;
+        top:100%;
+        width: 0;
+        height: 0;
+        background-color: blue;
+        transition-duration: .5s;
+    }
+    .list li:hover::before{
+        width: 70px;
+    }
+    .social-icons li{
+        display: inline-block;
+        text-align: center;
+        padding: 5px;
+    }
+    .social-icons i{
+        color: brown;
+        list-style-type: none;
+    }
+    a{
+        text-decoration: none;
+    }
+    a:hover{
+        color: brown;
+    }
+    .social-icons i:hover{
+        color: brown;
+        list-style-type: none;
+    }
+    .bottom-bar{
+        background: gray;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 50px;
+    }
+    .bottom-bar{
+        color: black;
+        margin: 0;
+        font-size: 16px;
+        padding: 1px;
+    }
+    .class{
+        float:left;
+    }
+    h1{
+        text-align: center;
+        color: #561c24;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    h2{
+        color: #6d2932;
+    }
+    .container1{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    .block{
+        width: 32%;
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid black;
+        box-shadow: 5px 5px 10px black;
+        box-sizing: border-box;
+        background-color: #e8d8c4;
+    }
+    .block h2{
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        color: #240a34;
+    }
+    .block p{
+        margin-bottom: 10px;
+    }
+    .block button{
+        display: block;
+        width: 50%;
+        padding: 10px;
+        background-color: #6d2932;
+        color: #e8d8c4;
+        cursor: pointer;
+        text-align: center;
+        margin-left: 100px;
+    }
+    .block button:hover{
+        background-color: #561c24;
+    }
+    .row{
+        width: 100%;
+        border-bottom: 2px solid white;
+        margin: 40px 0;
+    }
+    .items-container1{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        font-size: medium;
+    }
+    .items{
+        width: 45%;
+    }
+    ul{
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+    ul li{
+        margin-bottom: 10px;
+    }
+    a{
+        text-decoration: none;
+    }
+    .btn1{
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: large;
+        text-decoration: none;
+    }
+    li{
+        list-style-type: none;
+    }
+    .icon2{
+        padding: 10px;
+    }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="top-bar">
+            <div class="logo">
+                <a href="anasayfa.html"><img src="img/AREM Kütüphane.png" alt="Logo"></a>
+            </div>
+            <div class="search">
+                <button class="btn"><li><a href="kütüphanekullanımı.html">Kütüphane Kullanımı</a></li></button>
+            </div>
+            <div class="giris">
+                <div class="button-container">
+                    <a href="yöneticigirişi.html" target="_blank">
+                    <button class=" blue-button">YÖNETİCİ GİRİŞİ</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li><a href="#">Kategoriler</a>
+                        <ul>
+                            <li><a href="felsefe&psikoloji.html">Felsefe & Psikoloji</a></li>
+                            <li><a href="bilim.html">Bilim</a></li>
+                            <li><a href="sanat.html">Sanat</a></li>
+                            <li><a href="edebiyat.html">Edebiyat</a></li>
+                            <li><a href="tarihvecoğrafya.html">Tarih ve Coğrafya</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="yenigelenler.html">Yeni Gelenler</a></li>
+                    <li><a href="hakkımızda.html">Hakkımızda</a></li>
+                    <li><a href="iletişim.html">İletişim</a>
+                    </li> 
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <h1>AREM KÜTÜPHANESİ</h1>
+    <h2>KÜTÜPHANE KULLANIMI</h2>
+    <div class="items-container1">
+        <div class="items">
+            <ul>
+                <li>Arem kütüphanesini kullanmaya başalmadan önce kütüphane kullanımını inceleyiniz.</li>
+                <li>Aşağıda verilen blokların içerisinde hangi sayfaya nasıl erişebileceğiniz gösterilmektedir.</li> 
+                <li>Başlıklar yardımıyla istediklerinizi kolaylıkla istediğinizi bulabilirsiniz. </li>
+                <li>Bloğun içerisinde en alt kısmındaki button yardımı ile istediniz bölüme ulaşabilirsiniz.</li>
+                <li>Soru ve sorunlarınız için iletişim bilgileri bulunmaktadır.Kolaylıkla erişebilirsiniz.</li> 
+            </ul>
+        </div>
+    </div>
+    <div class="row"></div>
+    <div class="container1">
+        <div class="block">
+            <h2>İletişim</h2><br>
+            <P>Bu kısımdan Arem Kütüphanesinin kurucuları ile ileitişime geçebilir,istek ve sorunlarınızı kolaylıka iletebilirsiniz.İletişim kurmak için "İletişime Geç" butonuna tıklamanız yeterlidir.</P><br><br>
+            <a href="iletişim.html" target="_blank"><button class="btn1">İletişime Geç</button></a>
+        </div>
+        <div class="block">
+            <h2>Hakkımızda</h2><br>
+            <P>Arem Kütüphanesi hakkında bilgi almak için "Hakkımızda" butonuna tıklayarak ilgili kısma gidebilirsiniz.</P><br><br><br>
+            <a href="hakkımızda.html" target="_blank"><button class="btn1">Hakkımızda</button></a>
+        </div>
+        <div class="block">
+            <h2>Popüler Eserler</h2><br>
+            <P>Arem Kütüphanesindeki popüler eserlere "Popüler Eserler" butonuna tıklayarak erişebilirsiniz.Popüler eserler sayfasındaki resimlere tıklayarak kitapların açıklamalarını görebilirsiniz.</P><br><br>
+            <a href="populereserler.html" target="_blank"><button class="btn1">Popüler Eserler</button></a>
+        </div>
+    </div>
+    <div class="row"></div>
+    <div class="container1">
+        <div class="block">
+            <h2>Yeni Gelenler</h2><br>
+            <P>Arem Kütüphanesine yeni gelen eserleri görüntülemek için "Yeni Gelenler" butonuna tıklamanız yeterlidir.Böylece yeni gelen eserlerimizi görebilirsiniz.</P><br><br>
+            <a href="yenigelenler.html" target="_blank"><button class="btn1">Yeni Gelenler</button></a>
+        </div>
+        <div class="block">
+            <h2>Kategoriler</h2>
+            <h3>Felsefe & Psikoloji</h3>
+            <P>Arem Kütüphanesindeki kategoriler bölümündeki Felsefe & Psikoloji kısmında ilgili konuya dair kitaplar bulunmaktadır.Sayfaya erişmek için "Felsefe & Psikoloji" butonuna tıklamanız gerekmektedir.</P>
+            <a href="felsefe&psikoloji.html" target="_blank"><button class="btn1">Felsefe & Psikoloji</button></a>
+        </div>
+        <div class="block">
+            <h2>Kategoriler</h2>
+            <h3>Bilim</h3>
+            <P>Arem Kütüphanesindeki kategoriler bölümündeki Bilim kısmında ilgili konuya dair kitaplar bulunmaktadır.Sayfaya erişmek için "Bilim" butonuna tıklamanız gerekmektedir.</P><br>
+            <a href="bilim.html" target="_blank"><button class="btn1">Bilim</button></a>
+        </div>
+    </div>
+    <div class="row"></div>
+    <div class="container1">
+        <div class="block">
+            <h2>Kategoriler</h2>
+            <h3>Sanat</h3>
+            <P>Arem Kütüphanesindeki kategoriler bölümündeki Sanat kısmında ilgili konuya dair kitaplar bulunmaktadır.Sayfaya erişmek için "Sanat" butonuna tıklamanız gerekmektedir.</P><br>
+            <a href="sanat.html" target="_blank"><button class="btn1">Sanat</button></a>
+        </div>
+        <div class="block">
+            <h2>Kategoriler</h2>
+            <h3>Edebiyat</h3>
+            <P>Arem Kütüphanesindeki kategoriler bölümündeki Edebiyat kısmında ilgili konuya dair kitaplar bulunmaktadır.Sayfaya erişmek için "Edebiyat" butonuna tıklamanız gerekmektedir.</P><br>
+            <a href="edebiyat.html" target="_blank"><button class="btn1">Edebiyat</button></a>
+        </div>
+        <div class="block">
+            <h2>Kategoriler</h2>
+            <h3>Tarih ve Coğrafya</h3>
+            <P>Arem Kütüphanesindeki kategoriler bölümündeki Tarih ve Coğrafya kısmında ilgili konuya dair kitaplar bulunmaktadır.Sayfaya erişmek için "Tarih ve Coğrafya" butonuna tıklamanız gerekmektedir.</P><br>
+            <a href="tarihvecoğrafya.html" target="_blank"><button class="btn1">Tarih ve Coğrafya</button></a>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-cotent"></div>
+                <div class="footer-cotent">
+                    <h5>İletişim</h5>
+                     <ul class="social-icon">
+                     <li>Mail:aremkutuphane@gmail.com</li><br>
+                     <li>Telefon:05308605689</li>
+                     </ul>
+                    </div>
+                <div class="footer-cotent0">
+                    <h5>Takip Et</h5>
+                        <table class="social-icon">
+                            <tr>
+                                <td class="icon2">
+                                    <li><a href="https://www.whatsapp.com/" target="_blank"><img src="img/whatsappikonu.png" alt="WhatsApp" height="50px"></a></li>
+                                </td>
+                                <td>
+                                    <li><a href="https://www.instagram.com/" target="_blank"><img src="img/instagramikonu.png" alt="Instagram" height="50px"><a></li>
+                                </td>
+                                <td>
+                                    <li><a href="https://x.com/" target="_blank"><img src="img/twitterikonu.png" alt="Twitter" height="50px"></a></li>
+                                </td>
+                                <td>
+                                    <li><a href="https://www.linkedin.com/" target="_blank"><img src="img/linkedinikonu.png" alt="Linkedin" height="40px"></a></li>
+                                </td>
+                            </tr> 
+                        </table>
+                    </div>
+                </div>
+            <div class="bottom-bar">
+                <p>&copy;Tüm Haklar Saklıdır.</p>
+            </div>
+        </div>
+    </footer>    
+</body>
+</html>

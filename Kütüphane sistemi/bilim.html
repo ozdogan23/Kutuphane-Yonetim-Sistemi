@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilim</title>
+    <style>
+        body{
+            background-color: #f8fae5;
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            min-height: 900px;
+        }
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url("img/kütüphanearkaplan1.jpeg");
+            border-radius: 100px;
+            padding: 0;
+            margin-top: 10px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-left: 60px;
+            margin-top: 5px;
+        }
+        .logo img {
+            height: 100px;
+            width: auto;
+            border-radius: 50%;
+        }
+        .search {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        .btn {
+            background-color: #fff;
+            border: none;
+            cursor: pointer;
+            padding-left: 200px;
+            padding-right: 200px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 7px;
+            margin-left: 10px;
+            margin-top: -30px;
+            list-style-type: none;
+            font-size: medium;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: -40px;
+            margin-bottom: 5px;
+        }
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .navbar ul li {
+            margin-right: 20px;
+            position: relative;
+        }
+        .navbar ul li a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            display: block;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: large;
+        }
+        .navbar ul li ul {
+            display: none;
+            position: absolute;
+            background-color: #153448;
+            border-radius: 0 0 5px 5px;
+            padding: 0;
+            margin-top: 5px;
+            width: max-content;
+            z-index: 1;
+        }
+        .navbar ul li:hover ul {
+            display: block;
+        }
+        .navbar ul li ul li {
+            margin-right: 0;
+        }
+        .navbar ul li ul li a {
+            padding: 10px;
+            border-radius: 0;
+            display: block;
+        }
+        .navbar ul li a:hover,
+        .navbar ul li ul li a:hover {
+            background-color: #f39c12;
+        }
+        .button-container{
+            background:white;
+            padding: 5px 50px ;
+            text-decoration: none;
+            border:2px ;
+            font-weight:none;
+            margin-top: 40px;
+            margin-bottom:60px;
+            margin-left: 60px;
+            margin-right: 60px;
+            border-radius: 10px;
+            transition: .2s;
+        }
+        blue-button:hover{
+            background:white;
+        }
+        .blue-button{
+            background: white;
+            border:3px solid white ;
+            cursor: pointer;
+            color:black;
+            font-size: 12px;
+        }
+        footer{
+            margin:0;
+            padding:0;
+            font-size:16px;
+            color:white;
+            font-family: Arial, Helvetica, sans-serif;
+            position: absolute;
+            bottom: 0;
+        }
+        .footer{
+            background: black;
+            padding-top:40px;
+            position: relative;
+            bottom: 0;
+        }
+        .container{  
+            width: 1140px;
+            margin:auto;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            padding:10px;
+        }
+        h5{
+            font-size:16px;
+            color:white;
+            margin-bottom:0;
+            text-align:center;
+            margin-right:100px;
+        }
+        .footer-cotent  ul li{
+            width: 250px;
+            margin:auto;
+            padding:0;
+            margin-right:100px;
+            list-style: none;
+        }   
+        .list  li {
+            width: auto;
+            list-style-type: none;
+            padding:15px;
+            position: relative;
+                
+            }
+        .list li::before{
+            content:"";
+            position: absolute;
+            transform: translate(-50%,-50%);
+            left: 50%;
+            top:100%;
+            width: 0;
+            height: 0;
+            background-color: blue;
+            transition-duration: .5s;
+        }
+        .list li:hover::before{
+            width: 70px;
+        }
+        .social-icons li{
+            display: inline-block;
+            text-align: center;
+            padding: 5px;
+        }
+        .social-icons i{
+            color: brown;
+            list-style-type: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        a:hover{
+            color: brown;
+        }
+        .social-icons i:hover{
+            color: brown;
+            list-style-type: none;
+        }
+        .bottom-bar{
+            background: gray;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 50px;
+        }
+        .bottom-bar{
+            color: black;
+            margin: 0;
+            font-size: 16px;
+            padding: 1px;
+        }
+        .class{
+            float:left;
+        }
+        h1{
+            text-align: center;
+            color: #f8fae5;
+            background-color: #605353;
+            padding: 10px;
+            margin-left: 200px;
+            margin-right: 200px;
+            border-radius: 20px;
+        }
+        h2{
+            text-align: center;
+            color: #452620;
+        }
+        .books{
+            font-size: large;
+            display: flex;
+            justify-content: center;
+            margin-left: 70px;
+            margin-right: 70px;
+        }
+        .table{
+            margin-left: 50px;
+            background-color: #574545;
+            border-radius: 10px;
+            color: #f8fae5;
+        }
+        .images{
+            background-color: #699189;
+            width: 100%;
+            margin: 20px;
+            padding: 10px;
+            color: white;
+        }
+        li{
+            list-style-type: none;
+        }
+        .icon2{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="top-bar">
+            <div class="logo">
+                <a href="anasayfa.html"><img src="img/AREM Kütüphane.png" alt="Logo"></a>
+            </div>
+            <div class="search">
+                <button class="btn"><li><a href="kütüphanekullanımı.html">Kütüphane Kullanımı</a></li></button>
+            </div>
+            <div class="giris">
+                <div class="button-container">
+                    <a href="yöneticigirişi.html" target="_blank">
+                    <button class=" blue-button">YÖNETİCİ GİRİŞİ</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li><a href="#">Kategoriler</a>
+                        <ul>
+                            <li><a href="felsefe&psikoloji.html">Felsefe & Psikoloji</a></li>
+                            <li><a href="bilim.html">Bilim</a></li>
+                            <li><a href="sanat.html">Sanat</a></li>
+                            <li><a href="edebiyat.html">Edebiyat</a></li>
+                            <li><a href="tarihvecoğrafya.html">Tarih ve Coğrafya</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="yenigelenler.html">Yeni Gelenler</a></li>
+                    <li><a href="hakkımızda.html">Hakkımızda</a></li>
+                    <li><a href="iletişim.html">İletişim</a>
+                    </li> 
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <h1>Bilim</h1>
+    <hr>
+    <h2>Kütüphanemizde Bulunan Eserler</h2>
+    <div class="books">
+        <a href="#zamanınkısatarihi"><li class="images"><img src="img/zamanınkısatarihi.jpg" alt="Zamanın Kısa Tarihi" width="100px" height="130px"></li></a>
+        <a href="#kozmos"><li class="images"><img src="img/kozmos.jpg" alt="Kozmos" width="100px" height="130px"></li></a>
+        <a href="#genişlemişfenotip"><li class="images"><img src="img/genişlemişfenotip.jpg" alt="Genişlemiş Fenotip" width="100px" height="130px"></li></a>
+        <a href="#evrenavucunda"><li class="images"><img src="img/evrenavucunda.jpg" alt="Evren Avucunda" width="100px" height="130px"></li></a>
+    </div>
+    <hr>
+    <table width="90%" id="#zamanınkısatarihi" class="table">
+        <thead>
+            <tr>
+                <th>Stephen Hawking - Zamanın Kısa Tarihi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="7"><img src="img/zamanınkısatarihi.jpg" alt="Zamanın Kısa Tarihi" width="200px" class="images"></td>
+                <td>Kitap Adı:</td>
+                <td>Zamanın Kısa Tarihi</td>
+            </tr>
+            <tr>
+                <td>Yazar:</td>
+                <td>Stephen Hawking</td>
+            </tr>
+            <tr>
+                <td>Çevirmen:</td>
+                <td>Mehmet Ali Aslan</td>
+            </tr>
+            <tr>
+                <td>Sayfa Sayısı:</td>
+                <td>265</td>
+            </tr>
+            <tr>
+                <td>Orijinal Dili:</td>
+                <td>İngilizce</td>
+            </tr>
+            <tr>
+                <td>Orijinal Adı:</td>
+                <td>A Brief History of Time</td>
+            </tr>
+            <tr>
+                <td>Kitap Açıklaması:</td>
+                <td>
+                    Yaklaşık kırk dile çevrilen ve dünya üzerindeki her 750 kişiden birinin edindiği Zamanın Kısa Tarihi çağımızın en büyük zihinlerinden biri olan Stephen Hawking’in sorularına yanıt aradığı bir kitap:
+                    “Evren nasıl başladı ve başlamasını olanaklı kılan şey neydi?
+                    Zaman her daim ileri doğru mu akar?
+                    Evrenin bir sonu ya da sınırı var mı? 
+                    Uzayda başka boyutlar var mı?
+                    Her şey sona erdiğinde ne olacak?” 
+                    Elinizdeki bu baskı Hawking’in 2016 yılında kitabını son kez gözden geçirdiği ve bir Ek yazdığı genişletilmiş baskıdan dilimize kazandırılmıştır. Hawking’in bu ekte de belirttiği gibi, evrenin başlangıcından 300.000 yıl sonrasını araştıran ve Hawking’in varlığını ileri sürdüğü uzayzaman dokusundaki kırışıklıkları tespit eden kozmik mikrodalga ardalan ışınımı uydularının (WMAP ve Planck) verileri ve LIGO deneyinin kütleçekim dalgalarını saptaması gibi yeni gelişmeler ışığında Zamanın Kısa Tarihi güncelliğini koruyor.
+                    “Kozmolojinin karmaşıklığını herkesin anlayacağı şekilde basit bir açıklıkla ortaya seriyor... Müthiş bir beyin.” 
+                    Observer
+                    “Böyle büyük problemleri araştıran bir dehâyı izlemek heyecan verici.” 
+                    Sunday Times
+                    “Einstein’dan bu yana en büyük bilimsel zekâ.” 
+                    Daily Express     
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <table width="90%" id="kozmos" class="table">
+        <thead>
+            <tr>
+                <th>Carl Sagan - Kozmos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="5"><img src="img/kozmos.jpg" alt="Kozmos" width="200px" class="images"></td>
+                <td>Kitap Adı:</td>
+                <td>Kozmos</td>
+            </tr>
+            <tr>
+                <td>Yazar:</td>
+                <td>Carl Sagan</td>
+            </tr>
+            <tr>
+                <td>Çevirmen:</td>
+                <td>Reşit Aşçıoğlu</td>
+            </tr>
+            <tr>
+                <td>Sayfa Sayısı:</td>
+                <td>394</td>
+            </tr>
+            <tr>
+                <td>Kitap Açıklaması:</td>
+                <td>
+                    "Carl Sagan zamanımızın en parlak bilim adamlarından biridir... İçinde varlığımızı sürdürdüğümüz akıllara durgunluk veren Kozmos'un sonsuzluğunu dile getirirken bilimin geçmişine, şimdiki zamanına ve geleceğine ilişkin muhteşem bir eser yaratmış."Associated Press
+                    "Alanında göz kamaştırıcı, önerilerinde kışkırtıcı. Bu kitabı okuyan herkesin, etkisi altında kalacağından hiç kuşkum yok." The Miami Herald
+                    "Sagan edebi bir coşkuyla yazıyor. Harika bir eser. İnsan aklının tüm noktalarına değinen Kozmos gerçek olmayacak kadar gerçek."
+                    The Cleveland Plain Dealer
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <table width="90%" id="genişlemişfenotip" class="table">
+        <thead>
+            <tr>
+                <th>Richard Dawkins - Genişlemiş Fenotip</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="5"><img src="img/genişlemişfenotip.jpg" alt="Genişlemiş Fenotip" width="200px"></td>
+                <td>Kitap Adı:</td>
+                <td>Genişlemiş Fenotip</td>
+            </tr>
+            <tr>
+                <td>Yazar:</td>
+                <td>Richard Dawkins</td>
+            </tr>
+            <tr>
+                <td>Çevirmen:</td>
+                <td>Çağatay Tarhan</td>
+            </tr>
+            <tr>
+                <td>Sayfa Sayısı:</td>
+                <td>444</td>
+            </tr>
+            <tr>
+                <td>Kitap Açıklaması:</td>
+                <td>
+                    Dawkins, çok satan kitabı Gen Bencildir’in devamı olarak altı yıl sonra yazdığı bu kitabında, evrim konusundaki görüşlerini netleştirmekte ve “Seçilim Birimi Olarak Gen” kavramını bilimsel argümanlarla desteklemekte. Kendi sözleriyle “Bu, ne bir ders kitabıdır ne de özel bir alana yönelik giriş mahiyetindeki bir kitaptır. Bu kitap, yaşamın evrimine, özellikle doğal seçilimin mantığına ve doğal seçilimin etkide bulunduğu yaşamın hiyerarşik düzenine ilişkin kişisel bir bakışı içermektedir.” Dawkins kitabın hedef kitlesini, tüm branşlardaki lisans ve yüksek lisans öğrencileri dahil olmak üzere, uzman zoologlar, evrimsel biyologlar, hayvan davranışçıları, sosyobiyologlar çevrebilimciler, felsefeciler ve evrenbilimiyle ilgilenen hümanistler olarak tanımlıyor.
+                    Genişlemiş Fenotip dünyadaki canlı yaşamın kapsamlı bir materyalist tarihini sunuyor.
+                    “Genişlemiş Fenotip o kadar açıkça yazılmış ki çaba gösterebilen herkes tarafından anlaşılabilir.”  John Maynard Smith, London Review of Books
+                    “Son on ila yirmi yıldır evrimsel biyoloji konusunda yazılmış en önemli kitap olabilir.”  Profesör Antoni Hoffman
+                    “Bu keyifli ve düşünmeyi kışkırtan kitap, evrim konusunda çalışmanın günümüzde neden bu kadar  heyecan verici olduğunu mükemmel bir şekilde ortaya koyuyor.” Science  
+                    “Dawkins’in yazar olarak açıklığı ve canlılığı kıskanılacak düzeyde. Baştan sona orijinal, kışkırtıcı ve son derece keyifli.”      G.A. Parker, Heredity
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <table width="90%" id="evrenavucunda" class="table">
+        <thead>
+            <tr>
+                <th>Christophe Galfard - Evren Avucunda</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="7"><img src="img/evrenavucunda.jpg" alt="Evren Avucunda" width="200px"></td>
+                <td>Kitap Adı:</td>
+                <td>Evren Avucunda</td>
+            </tr>
+            <tr>
+                <td>Yazar:</td>
+                <td>Christophe Galfard</td>
+            </tr>
+            <tr>
+                <td>Çevirmen:</td>
+                <td>Duygu Akın</td>
+            </tr>
+            <tr>
+                <td>Sayfa Sayısı:</td>
+                <td>380</td>
+            </tr>
+            <tr>
+                <td>Orijinal Dili:</td>
+                <td>İngilizce</td>
+            </tr>
+            <tr>
+                <td>Orijinal Adı:</td>
+                <td>The Universe in Your Hand : A Journey Through Space, Time, and Beyond</td>
+            </tr>
+            <tr>
+                <td>Kitap Açıklaması:</td>
+                <td>
+                    Bu kitabın iki vaadi var: sadece tek bir denklem kullanmak (E = mc2) ve hiçbir okuru geride bırakmamak. Üç yüz seksen sayfa ve beş milyar yıllık göz alıcı bir yolculuk.”
+                    -Alexander Masters – The Spectator-
+                    Evrende yalnız değiliz.
+                    Evrene yapacağımız bu yolculukta da.
+                    Kumsalda yatmış gökyüzünü seyrederken biri elimizden tutuveriyor ve bizi muazzam bir yolculuğa çıkarıyor; karadeliklere, en uzak galaksilere ve kâinatın başlangıcına götürüyor.Bir atomun çekirdeğine dalıyor, zamanda yolculuk ediyor, Güneş’in içine giriyoruz. Dokunuyoruz. Christophe Galfard, evreni avucumuza bırakıyor.
+                    Fransa’da yılın bilim kitabı seçildikten sonra 20 dile çevrilen EVREN AVUCUNDA kısa sürede bir popüler bilim klasiğine dönüştü. Gezegenimizin en özel bilim anlatıcılarından Christophe Galfard –ki kendisi Stephen Hawking’in öğrencisi– denklemler yerine hayal gücümüzden faydalanarak bizleri kelimenin gerçek anlamıyla “bambaşka dünyalara” götürüyor.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-cotent"></div>
+                <div class="footer-cotent">
+                    <h5>İletişim</h5>
+                     <ul class="social-icon">
+                     <li>Mail:aremkutuphane@gmail.com</li><br>
+                     <li>Telefon:05308605689</li>
+                     </ul>
+                    </div>
+                <div class="footer-cotent0">
+                    <h5>Takip Et</h5>
+                        <table class="social-icon">
+                            <tr>
+                                <td class="icon2">
+                                    <li><a href="https://www.whatsapp.com/" target="_blank"><img src="img/whatsappikonu.png" alt="WhatsApp" height="50px"></a></li>
+                                </td>
+                                <td>
+                                    <li><a href="https://www.instagram.com/" target="_blank"><img src="img/instagramikonu.png" alt="Instagram" height="50px"><a></li>
+                                </td>
+                                <td>
+                                    <li><a href="https://x.com/" target="_blank"><img src="img/twitterikonu.png" alt="Twitter" height="50px"></a></li>
+                                </td>
+                                <td>
+                                    <li><a href="https://www.linkedin.com/" target="_blank"><img src="img/linkedinikonu.png" alt="Linkedin" height="40px"></a></li>
+                                </td>
+                            </tr> 
+                        </table>
+                    </div>
+                </div>
+            <div class="bottom-bar">
+                <p>&copy;Tüm Haklar Saklıdır.</p>
+            </div>
+        </div>
+    </footer>    
+</body>
+</html>
